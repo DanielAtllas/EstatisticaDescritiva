@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Distribuição de Frequência - Estatística Descritiva</title>
+        <meta name="description" content="Este é um site referente à estudos de Estrutura de Dados">
+    </head>
+    <body>
+        <h1>Distribuição de Frequência - Estatística Descritiva</h1>
+        <p>Esta se baseia em operações de estatística a partir de um conjunto de dados brutos, onde dado um conjunto de elementos na forma <strong>bruta</strong>, é realizada a <strong>ordenação</strong> desses elementos e apresentar-lhes em sua forma <strong>rol</strong>:</p>
+        <pre>
+    Conjunto de elementos brutos: {5,2,3,25,0.5}
+    
+    Conjunto de elementos rol: {0.5,2,3,5,25}
+        </pre>
+        <p>Após isso, é realizada a etapa de desenho da <strong>tabela de distribuição de frequência</strong>, a qual contém as colunas:</p>
+        <ul>
+            <li><strong>Xi</strong> - Elemento do rol</li>
+            <br>
+            <li><strong>Fi</strong> - Frequência de exibição dos elementos (Quantidade de vezes que o elemento aparece)</li>
+            <br>
+            <li><strong>Xi * Fi</strong> - Produto entre elemento e sua frequência</li>
+            <br>
+            <li><strong>Fa</strong> - Frequência acumulada (Quantidade de elementos apresentados até que o último elemento X seja apresentado)</li>
+            <br>
+            <li><strong>Fa(%)</strong> - Porcentagem da frequência acumulada ({Fa / Qtd elementos} * 100)</li>
+            <br>
+            <li><strong>Xi - Média</strong> - Subtração entre o elemento e a média do conjunto</li>
+            <br>
+            <li><strong>(Xi - Média)^2</strong> -  Subtração entre o elemento e a média do conjunto elevado ao quadrado</li>
+            <br>
+            <li><strong>(Xi - Média)^2 * Fi</strong> -  Subtração entre o elemento e a média do conjunto elevado ao quadrado em produto a Frequência</li>
+        </ul>
+        <pre>
+    | Xi | Fi | Xi * Fi | Fa | Fa(%) | Xi - Média | (Xi - Média)^2 | (Xi - Média)^2 * Fi |
+    |    |    |         |    |       |            |                |                     |
+     ---- ---- --------- ---- ------- ------------ ---------------- ---------------------
+    | &sum;  |    |         |                                          |                     |
+     ---- ---- ---------                                            ---------------------
+        </pre>
+        <p>Feito os cálculos da tabela e preenchido os campos, é partido para as <strong>operações</strong> de frequência, compostas por:</p>
+        <ul><li>Média</li> <li>Moda</li> <li>Mediana</li> <li>Variância</li> <li>Desvio Padrão</li></ul>
+        <p>Por fim, devem ser realizados as operações e desenho do <strong>histograma</strong> com os dados obtidos, bastando verificar o tipo ho histograma e o cálculo co <strong>coeficiente de assimetria</strong>. O histograma pode assumir 3 formas, onde:</p>
+        <ul>
+            <li><strong>Histograma Positivo</strong></li>
+                <p>Onde a assimetria do seu gráfico possui um agrupamento à esqueda do mesmo, além disso, o seu coeficiente possui um valor acima de zero e segue a regra: Moda &lt; Mediana &lt; Média</p>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRn-U-wozXVRvTg8XLuGVu-Ysm3B5tAdG8S5SAOXP7sFDMg__Yk&usqp=CAU">
+            <li><strong>Histograma Negativo</strong></li>
+                <p>Onde a assimetria do seu gráfico possui um agrupamento à direita do mesmo, além disso, o seu coeficiente possui um valor abaixo de zero e segue a regra: Média > Mediada > Moda</p>
+                <img src="https://www.voitto.com.br/assets/ckeditor2/plugins/imageuploader/uploads/2357cc5ff.jpg">
+        </ul>
+        <p>Para o cálculo do coeficiente de assimetria, é dada a fórmula em que: <strong>T = Média - Moda / Desvio Padrão</strong></p>
+    </body>
+</html>
