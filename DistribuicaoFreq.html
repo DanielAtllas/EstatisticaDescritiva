@@ -51,5 +51,47 @@
                 <img src="https://www.voitto.com.br/assets/ckeditor2/plugins/imageuploader/uploads/2357cc5ff.jpg">
         </ul>
         <p>Para o cálculo do coeficiente de assimetria, é dada a fórmula em que: <strong>T = Média - Moda / Desvio Padrão</strong></p>
+        <p>Para que o entendimento seja mais claro sobre os conceitos e cálculos sobre distribuição de frquência, segue abaixo um exemplo desse método:</p>
+        <pre>
+    <strong>Conjunto bruto dos dados</strong> = 
+          { 9 10 7 12 11 11 8 12 11 11 10 12 
+            8 9  9 11 7 11 9 8 9 11  9 11 11 
+            10 9 9 9 9 10 10 8 10 11 11 10 10 10}
+            
+            
+    <strong>Conjunto rol dos dados</strong> =
+          { 7 7 8 8 8 8 9 9 9 9 9 9 9 9 9 9 
+           10 10 10 10 10 10 10 10 10 11 11 
+           11 11 11 11 11 11 11 11 11 12 12 12}
+            
+            
+    <strong>| Xi | Fi | Xi * Fi | Fa | Fa(%)  | Xi - Média | (Xi - Média)^2 | (Xi - Média)^2 * Fi |</strong>
+     ---- ---- --------- ---- ------- ------------ ---------------- ---------------------
+    | 7  |  2 |   14    |  2 | 5,12%  |   -2,82    |      7,95      |         15,9        |
+     ---- ---- --------- ---- ------- ------------ ---------------- ---------------------
+    | 8  |  4 |   32    |  6 | 15,38% |   -1,82    |      3,31      |         13,24       | 
+     ---- ---- --------- ---- ------- ------------ ---------------- ---------------------
+    | 9  | 10 |   90    | 16 | 41,02% |   -0,82    |      0,67      |         6,7         | 
+     ---- ---- --------- ---- ------- ------------ ---------------- ---------------------
+    | 10 |  9 |   90    | 25 | 64,10% |    0,18    |      0,03      |         0,27        | 
+     ---- ---- --------- ---- ------- ------------ ---------------- ---------------------
+    | 11 | 11 |   121   | 36 | 92,30% |    1,18    |      1,39      |         15,29       | 
+     ---- ---- --------- ---- ------- ------------ ---------------- ---------------------
+    | 12 |  3 |   36    | 39 |  100%  |    2,18    |      4,75      |         14,25       | 
+     ---- ---- --------- ---- ------- ------------ ---------------- ---------------------
+    | <strong>&sum;</strong>  | 39 |   383   |                                           |         65,65       |
+     ---- ---- ---------                                            ---------------------
+            
+           
+    <strong>Média</strong> = 383/39 = 9,82
+    
+    <strong>Moda</strong> = 11
+    
+    <strong>Mediana</strong> = (10+10)/2 = 15
+    
+    <strong>Variância</strong> = 65,65/39 = 1,68
+    
+    <strong>Desvio Padrão</strong> = Raiz 1,68 = 1,29
+        </pre>
     </body>
 </html>
