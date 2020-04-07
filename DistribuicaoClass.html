@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Distribuição de frequência por classes - Estatística Descritiva</title>
+        <meta name="description" content="Este é um site referente à estudos de Estrutura de Dados">
+    </head>
+    <body>
+        <h1>Distribuição de frequência por classes - Estatística Descritiva</h1>
+        <p>Esta se torna semelhante a distribuição de frequência simples, com a utilidade em casos que o <strong>conjunto de elementos se torna muito grande</strong>, ou seja, quando têm-se poucos elementos no conjunto bruto, é usada a distribuição de frequência simples. Mas quando esse conjunto de elementos é composto por muitos valores, a distribuição simples se torna mais complexa e exaustiva, dessa forma, é mais fácil usar da distribuição de frequência por classes.</p>
+        <p>Como no método anterior, para medidas preventivas, é realizada a <strong>ordenação</strong> dos dados brutos, repetindo os valores duplicados sem alteração. Depois, basta seguir com a contrução da <strong>tabela</strong> e realizar os cálculos dos <strong>operadores de frequência</strong> para ter-se os valores resultantes. Segue abaixo a demonstração de cada etapa a ser seguida (Faremos a demonstração com um conjunto de poucos valores, para que facilite o andamento):</p>
+        <ol>
+            <li> Ordenação dos elementos</li>
+                <p>Dado um conjunto de elementos brutos, é realizada sua ordenação sequencial dos mesmos, de forma a conseguir o seu <strong>rol</strong>.</p>
+                <pre>
+            <strong>Conjunto bruto:</strong> {5,2,3,10,22,1,2,4,5,5,3,22,2,2}
+            
+            <strong>Conjunto Rol:</strong> {1,2,2,2,2,3,3,4,5,5,5,10,22}
+                </pre>
+            <li>Construção da tabela</li>
+                <p>A tabela conterá com as seguintes colunas:</p>
+                <ol>
+                    <strong><li>Classes</li></strong>
+                        <p>Aqui é onde ficará o <strong>range</strong> dos elementos do rol, as chamadas <strong>classes</strong>. Para isso, as seguintes etapas são realizadas:</p>
+                        <ol>
+                            <li>Calcular a <strong>amplitude total</strong>, da subtração entre o maior elemento e o menor elemento do rol</li>
+                            <pre>
+                        A = Xmaior - Xmenor
+                        
+                        A = 22 - 1 = 21
+                            </pre>
+                            <li>Calcula a <strong>quantidade de classes</strong> que terá:</li>
+                            <pre>
+                        Nc = 1 + 3,3 * Log(qtd de elementos)
+                                                           10
+                                                           
+                        Log(a) = x
+                             b
+                             
+                        a = b^x     
+                                                           
+                        Nc = 1 + 3,3 * Log(13)     
+                        
+                        Nc = 1 + 3,3 * 1,11 = 1 + 3,66 = 4,66
+                            </pre>
+                            <li>Calcular a <strong>amplitude de classe</strong>:</li>
+                            <pre>
+                        H = A/Nc
+                        
+                        H = 21/4,66 = 4,50 ~ 5
+                            </pre>
+                            <li>Montar as <strong>classes</strong>, onde serão classes de H em H até o maior elemento</li>
+                        </ol>
+                    <br>
+                    <strong><li>Pmi</li></strong>
+                        <p>O chamado <strong>ponto médio</strong> das classes, se dará pela <strong>metade da amplitude + Xi</strong>, onde <i>Xi</i> é o range inicial da classe, por exemplo, na classe 01 |- 16, sua amplitude é 15, com metade de 7,5 + 01 (Xi) = 8,5 (Pmi)</p>
+                    <strong><li>Fi</li></strong>
+                        <p>Esta é a <strong>frequência</strong> da quantidade de elemetos do rol que se encontram na classe em questão</p>
+                    <strong><li>Fi(%)</li></strong>
+                        <p>Como na distribuição simples, esta é a coluna de frquência em porcentagem, ou quantos porcento do total a frequência do elemento é exibida: <i>(Fi/Qtd elementos) * 100</i></p>
+                    <strong><li>Fa</li></strong>
+                        <p>A coluna da <strong>frequência acumulada</strong> dos elementos, determinada pela soma da frequência mais a frequência acumala anterior</p>
+                    <strong><li>Pmi * Fi</li></strong>
+                        <p>Produto entre o ponto médio e a frequência dos elementos</p>
+                    <strong><li>Pmi - Média</li></strong>
+                        <br>
+                    <strong><li>(Pmi - Média)^2</li></strong>
+                    <br>
+                    <strong><li>(Pmi - Média)^2 * Fi</li></strong>
+                </ol>
+                <p>Segue a baixo a criação da tabela em exemplo aos conjuntos dados no início:</p>
+                <pre>
+            <strong>Conjunto bruto:</strong> {5,2,3,10,22,1,2,4,5,5,3,22,2,2}
+            
+            <strong>Conjunto Rol:</strong> {1,2,2,2,2,3,3,4,5,5,5,10,22}
+            
+            
+            <strong>Classes</strong>
+                
+                A = Xmaior - Xmenor
+                        
+                A = 22 - 1 = 21
+            
+                Nc = 1 + 3,3 * Log(qtd de elementos)
+                                                  10
+                                                           
+                Log(a) = x
+                     b
+                             
+                a = b^x     
+                                                           
+                Nc = 1 + 3,3 * Log(13)     
+                        
+                Nc = 1 + 3,3 * 1,11 = 1 + 3,66 = 4,66
+                
+                H = A/Nc
+                        
+                H = 21/4,66 = 4,50 ~ 4
+                
+                
+            <strong>Tabela</strong>
+                
+                | Classes | Pmi | Fi | Fi% | Fa | Pmi * Fi | Pmi - Média | (Pmi - Média)^2 | (Pmi - Média)^2 * Fi |
+                 --------- ----- ---- ----- ---- ---------- ------------- ----------------- ----------------------
+                |    &sum;    |     |    |                                                     |                      |
+                 --------- ----- ----                                                       ----------------------
+                
+                
+                
+                <strong>| Classes | Pmi | Fi |   Fi%   | Fa | Pmi * Fi | Pmi - Média | (Pmi - Média)^2 | (Pmi - Média)^2 * Fi |</strong>
+                 --------- ----- ---- --------- ---- ---------- ------------- ----------------- ----------------------
+                | 1 |- 5  |  3  | 11 | 84,61%  | 11 |    33    |    -36,5    |     1332,25     |       14654,75       |
+                 --------- ----- ---- --------- ---- ---------- ------------- ----------------- ----------------------
+                | 5 |- 9  |  7  | 0  |    0%   | 11 |    0     |    -32,5    |     1056,25     |           0          |
+                 --------- ----- ---- --------- ---- ---------- ------------- ----------------- ----------------------
+                | 9 |- 13 |  11 | 1  |  7,70%  | 12 |    11    |    -25,5    |     650,25      |        650,25        |       
+                 --------- ----- ---- --------- ---- ---------- ------------- ----------------- ----------------------
+                |13 |- 17 |  15 | 0  |    0%   | 12 |    0     |    -24,5    |     600,25      |           0          |
+                 --------- ----- ---- --------- ---- ---------- ------------- ----------------- ----------------------
+                |17 |- 21 |  19 | 0  |    0%   | 12 |    0     |    -20,5    |     420,25      |           0          |
+                 --------- ----- ---- --------- ---- ---------- ------------- ----------------- ----------------------
+                |21 |- 25 |  23 | 1  |  7,70%  | 13 |    23    |    -16,5    |     272,25      |        272,25        |
+                 --------- ----- ---- --------- ---- ---------- ------------- ----------------- ----------------------
+                |    <strong>&sum;</strong>    | 78  | 13 |   Média = &sum;(Pmi * Fi)/Qtd                               |       15577,25       |
+                 --------- ----- ----                                                           ----------------------
+                </pre>
+        </ol>
+        <p> Por fim, basta realizar as <strong>operações de frequência</strong> e terminar por desenhar e indicar a <strong>simetria do histograma</strong>. Em relação as operações, são elas:</p>
+        <ul>
+            <li><strong>Média</strong> - Soma dos elementos da coluna <i>Pmi * Fi</i> dividido pela quantidade de elementos</li>
+                <pre>
+            &sum;(Pmi * Fi)/Qtd 
+            
+            (33 + 0 + 11 + 0 + 0 + 23) / 13 = 45,76
+                </pre>
+            <br>
+            <li><strong>Moda</strong> - Limite inferior da classe da moda, ou seja, encontra-se a moda dos elementos e identifica-o em sua classe</li>
+                <pre>
+            Xi + H(Fmax - Fant) / (2 * Fmax) - (Fant + Fpost)
+            
+            <strong>classe 1 |- 5</strong> (Classe onde a moda 2 {elemento que mais repete} se encontra)
+                1 + 4*(11) / (2 * 11) 
+                
+                1 + 44 / 22
+                
+                1 + 2 = 3
+            
+                </pre>
+            <br>
+            <li><strong>Mediana</strong> - Limite inferior da classe da mediana, ou seja, tira-se a mediana da quantidade de elementos</li>
+                <pre>
+            Xi + H(n/2 - Fa anterior) / Fi
+            
+            <strong>classe 1 |- 5</strong> (Classe onde a mediana 3 {Posição 7} se encontra)
+                1 + 4*(13/2) / 11
+                
+                1 + 4*6,5 / 11
+                
+                1 + 26 / 11
+                
+                1 + 2,36 = 3,36
+            
+                </pre>
+            <br>
+            <li><strong>Variância</strong> - Soma dos elementos da coluna <i>(Pmi - Média)^2 * Fi</i> dividido pela quantidade de elementos </li>
+                <pre>
+             &sum;{(Pmi - Média)^2 * Fi} / Qtd elementos
+             
+             15577,25 / 13 = 1198,25
+                </pre>
+            <br>
+            <li><strong>Desvio Padrão</strong> - O desvio padrão, se dá pela raiz da variância</li>
+                <pre>
+            Raiz da vaiância
+            
+            Raiz de 1198,25 = 34,61
+                </pre>
+        </ul>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </body>
+</html>
